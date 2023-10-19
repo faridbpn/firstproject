@@ -1,0 +1,491 @@
+:root {
+    --primaryTextColor: #ce7d03; /* Untuk title atau judul */
+    --secondaryTextColor: #656d72; /* Untuk text biasa seperti paragraph contohnya */
+  
+    --borderColor: #f1f1f1;
+    --lineColor: #d9d9d9; /* untuk line di pre-title */
+  
+    --primaryBackgroundColor: #fff;
+    --secondaryBackgroundColor: #fbfbfb;
+    --thirdBackgroundColor: #f5f3fe;
+  
+    --primaryIconColor: #988ff7;
+    --primaryIconColorHover: #0d39ff;
+  
+    --sectionPadding: 6rem 0;
+  
+    --itemBorderRadius: 0.7rem;
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Segoe UI';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong{
+    color: var(--primaryTextColor);
+}
+
+p{
+    font-size: 1em;
+    line-height: 1.9em;
+}
+
+/* 1rem  1em = 16px */
+
+p,
+span,
+label,
+input,
+textarea,
+li{
+    color: var(--secondaryTextColor);
+}
+
+a{
+    text-decoration: none;
+}
+
+/* End Preparation */
+
+.main-container{
+    width: 1200px;
+    margin: 0 auto;
+}
+    
+@media screen and (max-width: 1200px) {
+    .main-container{
+        width: 90%;
+    }
+} 
+
+/* button */
+.btn{
+    padding: 1rem 1.5rem;
+    background: white;
+    border: 1.5px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    border: black solid;
+    border-radius: 0.7rem;
+}
+
+.btn:hover{
+    box-shadow: rgba(0, 0, 0, 0.589) 3px 5px 9px;
+    border-color: gray;
+}
+
+/* Titles */
+.section-title{
+    margin: 1rem 0 4rem;
+    font-size: 2rem;
+}
+
+.section-title{
+    margin: 1rem 0 4rem;
+    font-size: 2rem;
+}
+
+.pre-title{
+    text-transform: uppercase;
+    letter-spacing: .5rem;
+    color: var(--secondaryTextColor);
+    position: relative;
+    padding-left: 40px;
+    width: fit-content;
+    font-weight: 400px;
+    font-size: 0.9rem;
+}
+
+.pre-title:before{
+    content:"";
+    width: 30px;
+    height: 1px;
+    background: var(--lineColor);
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 50%;
+}
+
+
+.pre-title span{
+    color: var(--primaryIconColor) !important;
+}
+
+/* Layout */
+
+.grid-3{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3em;
+    margin-bottom: 300px;
+}
+
+/* Logo * Navbar Menu */
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 2em 0;
+}
+
+.nav ul{
+    list-style: none;
+    display: flex;
+    gap: 3em;
+}
+
+/* Logo */
+
+.logo{
+    display: flex;
+    align-items: center;
+    font-weight: 100px;
+    font-size: 2em;
+}
+
+.logo img{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 200px;
+}
+
+/* Nav Menu */
+
+nav ul li{
+    display: flex;
+    align-items: center;
+}
+
+nav ul li a{
+    color: var(--primaryTextColor);
+}
+
+.burger div{
+    width: 25px;
+    height: 2px;
+    background-color: black;
+    margin: 7px;
+    transition: all .3s;
+    z-index: 99;
+}
+
+.burger{
+    display: none;
+    z-index: 99;
+    position: fixed;
+    top: 33px;
+    right: 35px;
+}
+
+/* Hero Selection */
+
+#hero{
+    height: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.hero-name{
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0.5em 5 1em;
+}
+
+.hero-name span{
+    color: var(--primaryIconColor);
+}
+
+.hero-right img{
+    width: 100%;
+    background-image: none;
+}
+
+.hero-right{
+    display: flex;
+    justify-content: center;
+    left: 51.8%;
+    width: 400px ;
+    height: 250px;
+}
+
+/* Service section */
+
+#services{
+    background-color: var(--secondaryBackgroundColor);
+    padding: var(--sectionPadding);
+}
+
+.services .pre-title{
+    margin: 0 auto;
+}
+
+.services-title,
+.section-title{     
+   margin-bottom: 2.5rem;
+}
+
+.service{
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: var(--lineColor);
+    border-radius: var(--itemBorderRadius);
+}
+.service:hover{
+    box-shadow: black 5px 3px 20px;
+}
+
+.service h4{
+    margin: 1.5rem 0;
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.service-icon{
+    background: var(--thirdBackgroundColor);
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 1.3rem;
+    border-radius: 0.5rem;
+}
+
+.service-icon svg{
+    fill: var(--primaryIconColor);
+}
+
+
+/* portfolio section */
+
+#portfolio{
+    padding: var(--sectionPadding);
+}
+
+.portfolios{
+    border-radius: var(--itemBorderRadius);
+    overflow: hidden;
+    border: 6px solid var(--borderColor);
+    padding: 1.4rem;
+}
+
+.portfolios-cover{
+    height: 250px;
+}
+
+.portfolios-cover img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-info{
+    padding: 2rem;
+}
+
+.portfolio-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.portfolio h4{
+    font-weight: 500;
+    font-size: 1.05rem;
+}
+
+.portfolio-title a svg:hover {
+    fill: var(--primaryIconColor);
+    border-radius: 1rem;
+}
+
+.portfolio-title a svg {
+    transition: 0.2s ease-in-out;
+}
+.portfolio-tags{
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+    border-radius: 1rem;
+}
+
+.portfolio-tags div{
+    font-size: .9rem;
+    border: 0.6rem solid var(--borderColor);
+    padding: 0.4rem 1rem;
+    color: var(--secondaryTextColor);
+    border-radius: 1rem;
+}
+
+/* Sklills and education */
+
+#skills{
+    padding: var(--sectionPadding);
+    background: var(--secondaryBackgroundColor);
+}
+
+.skills-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.education{
+    display: flex;
+    gap: 2rem;
+}
+
+.education .line{
+    padding: 0rem;
+}
+
+.education .line div{
+    width: 2px;
+    height: 100%;
+    background: var(--borderColor);
+    position: relative;
+}
+
+.education-info p{
+    margin: 0.6rem 0 1.4rem;
+}
+
+/* Dots on the line */
+
+.education .line div::before{
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: var(--borderColor);
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+}
+
+.skills-list{
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    margin-top: 1.5rem;
+}
+
+.skills-right ul{
+    line-height: 2rem;
+    padding: 0 1rem;
+}
+
+#contact{
+    padding: var(--sectionPadding);
+}
+
+.contact{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3px;
+}
+
+.contact-item{
+    margin-left: 2rem;
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 2.5rem;
+}
+
+.contact-form div{
+    margin-bottom: 1.4rem;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width: 100%;
+    padding: 0.75rem 1.3rem;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    border: 1px solid var(--borderColor);
+    border-radius: 5px;
+    resize: none;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder{
+    color: #5d51e8;
+}
+.contact-form input:focus,
+.contact-form textarea:focus{
+    outline: none;
+    border: 1px solid #7d7d7d;
+}
+
+.btn-submit{
+    width: 100%;
+    padding: 0.75rem 1.3rem;
+    background-color: var(--primaryIconColor);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: 0.2 ease-in-out;
+}
+.btn-submit:hover{
+    background: var(--primaryIconColorHover);
+}
+
+.contact-item-icon{
+    background: var(--thirdBackgroundColor);
+    width: 43px;
+    height: 43px;
+    border-radius: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.4rem;
+}
+
+.contact-item-icon svg{
+    fill: var(--primaryIconColor);
+}
+
+.contact-item-detail h4{
+    margin-bottom: 0.6rem;
+}
+
+/* Footer Selection */
+
+footer {
+    padding: 4rem 0;
+    background: var(--secondaryBackgroundColor);
+    text-align: center;
+  }
+  
+  .footer-icons {
+    margin-bottom: 1rem;
+  }
+  
+  .footer-icons a {
+    margin: 0 0.5rem;
+  }
+  
+  .footer-icons svg {
+    fill: #3e3f40;
+  }
+  
+  .footer-icons a:hover svg {
+    fill: #000;
+    background-color: gray;
+    border-radius: 0.1rem;
+  }
+
+.nav ul a:hover{
+    color: #656d72;
+}
